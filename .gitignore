@@ -1,0 +1,13 @@
+.remember/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Local provenance and earlier distributions are preserved outside Git.
+artifacts/
+evidence/
+docs/hardening-*.md
+docs/investigation-*.md
+docs/superpowers/

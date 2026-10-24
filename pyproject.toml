@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cyclops-fresheye-codex"
+version = "0.1.0a5"
+description = "Experimental second-terminal fresh-context investigations using native Codex"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [{name = "Cyclops Eye Team"}]
+dependencies = []
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+]
+
+[project.scripts]
+codex-fresheye = "cyclops_fresheye.cli:entrypoint"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+"""Source-tree and standalone-install entry point."""
+import json
+import os
+from pathlib import Path
+import sys
+
+sys.dont_write_bytecode = True
+root = Path(__file__).resolve().parents[1]
+config = root/'install-config.json'
+if config.exists():
+    settings = json.loads(config.read_text())
+    configured = settings.get('data_dir')
+    if configured:
+        os.environ.setdefault('CYCLOPS_FRESHEYE_DATA_DIR', configured)
+    if settings.get('browser_tmp'):
+        os.environ.setdefault('CYCLOPS_FRESHEYE_BROWSER_TMP', settings['browser_tmp'])
+sys.path.insert(0, str(root/'src'))
+from cyclops_fresheye.cli import entrypoint
+
+raise SystemExit(entrypoint())

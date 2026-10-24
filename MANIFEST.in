@@ -1,0 +1,7 @@
+include LICENSE README.md install.sh pyproject.toml
+recursive-include src *.py
+recursive-include bin *
+recursive-include tools *.py *.sh
+recursive-include tests *.py
+recursive-include docs *.md
+recursive-include evidence *.json *.txt *.md *.stdout codex-fresheye SHA256SUMS
